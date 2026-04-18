@@ -1,4 +1,5 @@
-# ── Usage ──────────────────────────────────────────────────────────────────
+# ── prek ──────────────────────────────────────────────────────────────────────
+# https://prek.j178.dev/
 # prek install
 # prek autoupdate -cooldown-days 30
 # prek --all-files --show-diff-on-failure
