@@ -72,9 +72,10 @@ hooks = [
 [[repos]]
 repo = "https://github.com/astral-sh/ruff-pre-commit"
 rev = "v0.15.11"
+# Use `#` to disable taplo format reflow
 hooks = [
-  { id = "ruff-check", args = ["--fix"], types_or = ["python", "pyi", "markdown"] },
-  { id = "ruff-format", args = ["--preview"], types_or = ["python", "pyi", "markdown"] },
+  { id = "ruff-check", args = ["--fix"], types_or = ["python", "pyi", "markdown"] },      #
+  { id = "ruff-format", args = ["--preview"], types_or = ["python", "pyi", "markdown"] }, #
 ]
 
 # ── Shell ─────────────────────────────────────────────────────────────────────
@@ -90,7 +91,7 @@ repo = "local"
 [[repos.hooks]]
 id = "taplo"
 name = "taplo"
-entry = "npx --yes @taplo/cli@0.7.0 fmt "
+entry = "npx --yes @taplo/cli@0.7.0 fmt --option column_width=120"
 language = "system"
 types_or = ["toml"]
 
