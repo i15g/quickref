@@ -9,7 +9,7 @@ import java.util.*;
 | Data Type | Default Value | Size   | Max    |
 | --------- | ------------- | ------ | ------ |
 | boolean   | `false`       | 1 bit  |        |
-| char      | “ “ (space)   | 2 byte | 2^16-1 |
+| char      | '\u0000'      | 2 byte | 2^16-1 |
 | byte      | 0             | 1 byte | 2^07-1 |
 | short     | 0             | 2 byte | 2^15-1 |
 | int       | 0             | 4 byte | 2^31-1 |
@@ -175,7 +175,7 @@ s.lastIndexOf(s2), s.lastIndexOf(s2, fromIndex)
 s.substring(beginIndex)
 s.substring(beginIndex, endIndexExclusive)
 
-s.replace("he", "HE")   //replaces all instaces of `he`
+s.replace("he", "HE")   //replaces all instances of `he`
 s.replaceAll(regex, "") //same as replace but takes a regex
 s.matches(regex)
 
@@ -227,9 +227,9 @@ return sb.toString();
 Examples:
 
 ```java
-s.replaceAll("\s+", "") //remove all whitespace
+s.replaceAll("\\s+", "") //remove all whitespace
 s.replaceAll("[^a-zA-Z ]", "") //remove anything that isn't a letter or a space
-s.matches("([a-zA-Z]|\\d|\s)*"); //s only has alphabet or digits or whitespace
+s.matches("([a-zA-Z]|\\d|\\s)*"); //s only has alphabet or digits or whitespace
 ```
 
 ## Math

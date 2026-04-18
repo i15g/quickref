@@ -46,7 +46,8 @@ There are 6 levels of headings. In descending size order:
 
 ### Numbered
 
-Most renderers will automatically handle numbering, though you can certainly increment them yourself.
+Most renderers will automatically handle numbering, though you can certainly
+increment them yourself.
 
 1. One
 1. Two
@@ -106,7 +107,3 @@ public static void main(String args[]){
 > This is a multiline quote block.
 >
 > Linebreaks get their own `>` char.
-
-## Formatters
-
-- TODO

@@ -55,7 +55,8 @@ c = float('3.5')
   - operand of boolean ops (`and`, `not`, etc)
   - param to functions like any()
 - Falsey
-  - Empty sequences/collections (lists, tuples, dictionaries, sets, strings, range(0))
+  - Empty sequences/collections (lists, tuples, dictionaries, sets, strings,
+    range(0))
   - Zero of any numeric: 0, 0.0, 0j
   - Constants: None, False
 - Truthy
@@ -68,7 +69,8 @@ c = float('3.5')
 ## Strings
 
 - A string is an immutable array of chars
-  - Which means you can pass a string anywhere that's expecting an iterator (eg: `map(func,iter)`)
+  - Which means you can pass a string anywhere that's expecting an iterator (eg:
+    `map(func,iter)`)
 - Use a list of strings and `join()` to mimic a stringbuilder
 
 ```python
@@ -128,7 +130,7 @@ for s in '01234': print(s)
 for e in [0,1,2,3,4]: print(e)
 
 j = 0
-while j < 5: print(i)
+while j < 5: print(j)
 
 break    # Exit the loop
 continue # Exit the current iteration
@@ -147,7 +149,8 @@ chr(ord('a')) # char to unicode
 ### Iterables
 
 ```python
-sorted([3,1,2])   sorted([1,3,2],key=lambda x: abs(x),reverse=True)
+sorted([3,1,2])
+sorted([1,3,2], key=lambda x: abs(x), reverse=True)
 all([True, True])
 any([True, True])
 filter(lambda x: x > 1, [1,2,3]) # If func is None > identity function > falsey elements are removed
@@ -244,7 +247,8 @@ my_tuple[0] = 7 # TypeError: 'tuple' object does not support item assignment
 
 ## Slicing
 
-Slicing lists does not generate copies of the objects in the list; it just copies the references to them.
+Slicing lists does not generate copies of the objects in the list; it just
+copies the references to them.
 
 ```python
 my_list = list("abcde")
@@ -288,7 +292,7 @@ newlist = [s.upper() for s in ['a','b','c'] if s <= 'b' ]
 
 ```python
 # swap values
-x, y = y, z
+x, y = y, x
 arr[0], arr[1] = arr[1], arr[0]
 
 # tuple unpacking
@@ -377,7 +381,25 @@ nlargest(n, iterable, key=None) aka sorted(iterable, reverse=True)[:n]
 nsmallest(n, iterable, key=None) aka sorted(iterable)[:n]
 ```
 
-TODO https://docs.python.org/3/library/heapq.html#basic-examples
+Heapsort (not stable, unlike `sorted()`):
+
+```python
+def heapsort(iterable):
+    h = []
+    for value in iterable:
+        heappush(h, value)
+    return [heappop(h) for i in range(len(h))]
+```
+
+Tuples for priority queue (first element is the sort key):
+
+```python
+h = []
+heappush(h, (5, 'write code'))
+heappush(h, (1, 'write spec'))
+heappush(h, (3, 'create tests'))
+heappop(h)  # (1, 'write spec')
+```
 
 ## itertools
 
@@ -404,6 +426,15 @@ reduce(lambda x, y: x+y, [1, 2, 3, 4, 5]) # ((((1+2)+3)+4)+5) = 15
 import operator
 def prod(factors): #same idea as sum() builtin
     return reduce(operator.mul, factors, 1)
+```
+
+## textwrap
+
+```python
+from textwrap import *
+
+wrap("abcdef", 2)
+# ['ab', 'cd', 'ef']
 ```
 
 ## Exceptions
@@ -468,7 +499,9 @@ for line in lines:
 
 ## Trivia
 
-- Python uses an algorithm called Timsort. A hybrid sorting algorithm, Timsort is derived from merge sort and insertion sort, designed to perform well on many kinds of real-world data. Uses hand-optimized C under the hood.
+- Python uses an algorithm called Timsort. A hybrid sorting algorithm, Timsort
+  is derived from merge sort and insertion sort, designed to perform well on
+  many kinds of real-world data. Uses hand-optimized C under the hood.
 
 ## Further reading
 
