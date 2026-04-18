@@ -1,0 +1,18 @@
+[[repos]]
+repo = "builtin"
+hooks = [
+  { id = "trailing-whitespace" },
+  { id = "end-of-file-fixer" },
+  { id = "check-merge-conflict" },
+  { id = "check-case-conflict" },
+]
+
+[[repos]]
+repo = "local"
+
+[[repos.hooks]]
+id = "prettier"
+name = "prettier"
+entry = "npx --yes prettier@3.8.1 --write"
+language = "system"
+types_or = ["json", "markdown", "yaml"]

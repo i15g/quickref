@@ -49,6 +49,7 @@ c = float('3.5')
 ```
 
 ## Truthy and Falsey
+
 - `boolean context`
   - if or while condition
   - operand of boolean ops (`and`, `not`, etc)
