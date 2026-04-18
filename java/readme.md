@@ -288,7 +288,7 @@ object[] arr
 Arrays.toString(arr) //useful for pretty printing
 Arrays.binarySearch(arr, key) //returns index, arr must be sorted
 Arrays.equals(arr0, arr1) // checks length and arr0[i].equals(arr1[i]) for all i
-Arrays.fill(arr, value) //assings value to each element in arr
+Arrays.fill(arr, value) //assigns value to each element in arr
 Arrays.mismatch(arr0, arr1) //index of first mismatch (includes DNEs) or -1 if none found
 Arrays.sort(arr) // merge sort, must implement equals() method for custom objects
 Arrays.stream(arr)
@@ -335,7 +335,7 @@ names.replaceAll(s -> s.toUpperCase())
 ```java
 List<String> list = Arrays.asList("Bob", "Alice", "John");
 
-Collections.fill(coll, T obj) //assings value to each element
+Collections.fill(coll, T obj) //assigns value to each element
 Collections.frequency(coll, Object o)
 Collections.indexOfSubList(list, Arrays.asList("Alice", "John"))
 Collections.max(coll), min(coll)

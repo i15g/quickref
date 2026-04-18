@@ -1,10 +1,70 @@
+# ── Usage ──────────────────────────────────────────────────────────────────
+# prek install
+# prek autoupdate -cooldown-days 30
+# prek --all-files --show-diff-on-failure
+
+# ── Builtins ──────────────────────────────────────────────────────────────────
 [[repos]]
 repo = "builtin"
 hooks = [
+  # whitespace / encoding
   { id = "trailing-whitespace" },
   { id = "end-of-file-fixer" },
+  { id = "mixed-line-ending" },     # normalizes to LF
+  { id = "fix-byte-order-marker" }, # removes UTF-8 BOM
+  # file validation
+  { id = "check-yaml" },
+  { id = "check-json" },
+  { id = "check-toml" },
+  { id = "check-xml" },
+  # executables / symlinks
+  { id = "check-executables-have-shebangs" },
+  { id = "check-shebang-scripts-are-executable" },
+  { id = "check-symlinks" },                       # broken symlinks
+  # safety
   { id = "check-merge-conflict" },
-  { id = "check-case-conflict" },
+  { id = "check-case-conflict" },     # e.g. Foo.py vs foo.py on case-insensitive fs
+  { id = "check-vcs-permalinks" },    # ensures GitHub links use commit SHAs, not branch names
+  { id = "check-added-large-files" },
+]
+
+# ── General ───────────────────────────────────────────────────────────────────
+[[repos]]
+repo = "https://github.com/pre-commit/pre-commit-hooks"
+rev = "v6.0.0"
+hooks = [
+  { id = "forbid-new-submodules" },
+  { id = "detect-private-key" },          # PEM blocks, SSH keys, etc.
+  { id = "check-illegal-windows-names" }, # CON, NUL, trailing dots, etc.
+  { id = "destroyed-symlinks" },          # symlink silently replaced by a regular file
+  # { id = "no-commit-to-branch" },       # block direct commits to main/master
+]
+
+[[repos]]
+repo = "https://github.com/codespell-project/codespell"
+rev = "v2.4.2"
+hooks = [{ id = "codespell", args = ["--ignore-words-list=dne"] }]
+
+[[repos]]
+repo = "https://github.com/google/keep-sorted"
+rev = "v0.8.0"
+hooks = [{ id = "keep-sorted" }]
+
+[[repos]]
+repo = "https://github.com/gitleaks/gitleaks"
+rev = "v8.30.1"
+hooks = [{ id = "gitleaks" }]
+
+# ── Python ────────────────────────────────────────────────────────────────────
+[[repos]]
+repo = "https://github.com/pre-commit/pre-commit-hooks"
+rev = "v6.0.0"
+hooks = [
+  { id = "check-ast" },              # file parses as valid Python
+  { id = "check-docstring-first" },  # docstring must precede any code
+  { id = "debug-statements" },       # pdb/ipdb/breakpoint() left in
+  { id = "name-tests-test" },        # test files must match test_*.py or *_test.py
+  { id = "requirements-txt-fixer" }, # sorts & deduplicates requirements*.txt
 ]
 
 # Ruff lints and formats Python files and fenced Python code blocks in markdown.
@@ -13,12 +73,26 @@ hooks = [
 repo = "https://github.com/astral-sh/ruff-pre-commit"
 rev = "v0.15.11"
 hooks = [
-  { id = "ruff-check", args = ["--fix"], types_or = ["python", "pyi", "markdown"] }, # linter
+  { id = "ruff-check", args = ["--fix"], types_or = ["python", "pyi", "markdown"] },
   { id = "ruff-format", args = ["--preview"], types_or = ["python", "pyi", "markdown"] },
 ]
 
+# ── Shell ─────────────────────────────────────────────────────────────────────
+[[repos]]
+repo = "https://github.com/shellcheck-py/shellcheck-py"
+rev = "v0.11.0.1"
+hooks = [{ id = "shellcheck" }]
+
+# ── Local ─────────────────────────────────────────────────────────────────────
 [[repos]]
 repo = "local"
+
+[[repos.hooks]]
+id = "taplo"
+name = "taplo"
+entry = "npx --yes @taplo/cli@0.7.0 fmt "
+language = "system"
+types_or = ["toml"]
 
 [[repos.hooks]]
 id = "prettier"
