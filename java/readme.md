@@ -1,3 +1,37 @@
+<!-- prettier-ignore-start -->
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents** _generated with [DocToc](https://github.com/thlorenz/doctoc)_
+
+- [Java Quickref](#java-quickref)
+  - [Primitives](#primitives)
+  - [Type Conversions](#type-conversions)
+  - [Operators](#operators)
+  - [Methods](#methods)
+  - [Conditionals](#conditionals)
+  - [Loops](#loops)
+  - [Exceptions](#exceptions)
+  - [Enum](#enum)
+  - [Strings](#strings)
+  - [Regexes](#regexes)
+  - [Math](#math)
+  - [Random](#random)
+  - [Arrays](#arrays)
+  - [java.util.Arrays](#javautilarrays)
+  - [ArrayLists](#arraylists)
+  - [java.util.Collections](#javautilcollections)
+  - [Lambdas](#lambdas)
+  - [Comparators](#comparators)
+  - [Streams](#streams)
+  - [LinkedList](#linkedlist)
+  - [ArrayDeque](#arraydeque)
+  - [Set / HashSet](#set--hashset)
+  - [Map / HashMap](#map--hashmap)
+  - [Comments](#comments)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+<!-- prettier-ignore-end -->
+
 # Java Quickref
 
 ```java

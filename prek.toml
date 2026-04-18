@@ -66,6 +66,7 @@ hooks = [
   { id = "debug-statements" },       # pdb/ipdb/breakpoint() left in
   { id = "name-tests-test" },        # test files must match test_*.py or *_test.py
   { id = "requirements-txt-fixer" }, # sorts & deduplicates requirements*.txt
+  { id = "check-builtin-literals" }, # prefer [] / {} / () over list() / dict() / tuple()
 ]
 
 # Ruff lints and formats Python files and fenced Python code blocks in markdown.
@@ -84,6 +85,17 @@ hooks = [
 repo = "https://github.com/shellcheck-py/shellcheck-py"
 rev = "v0.11.0.1"
 hooks = [{ id = "shellcheck" }]
+
+[[repos]]
+repo = "https://github.com/scop/pre-commit-shfmt"
+rev = "v3.13.1-1"
+hooks = [{ id = "shfmt", args = ["-w", "-i", "2"] }]
+
+# ── Markdown ─────────────────────────────────────────────────────────────────
+[[repos]]
+repo = "https://github.com/thlorenz/doctoc"
+rev = "v2.4.1"
+hooks = [{ id = "doctoc" }]
 
 # ── Local ─────────────────────────────────────────────────────────────────────
 [[repos]]

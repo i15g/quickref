@@ -1,3 +1,41 @@
+<!-- prettier-ignore-start -->
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents** _generated with [DocToc](https://github.com/thlorenz/doctoc)_
+
+- [Python Quickref](#python-quickref)
+  - [Operators](#operators)
+  - [Casting](#casting)
+  - [Truthy and Falsey](#truthy-and-falsey)
+  - [Strings](#strings)
+  - [Control Flow](#control-flow)
+  - [Loops](#loops)
+  - [Built in Functions](#built-in-functions)
+    - [Iterables](#iterables)
+  - [Lists](#lists)
+  - [Sets](#sets)
+  - [Dictionaries / Maps](#dictionaries--maps)
+  - [Tuples](#tuples)
+  - [Slicing](#slicing)
+  - [Enumerate](#enumerate)
+  - [List Comprehensions](#list-comprehensions)
+  - [Packing and Unpacking](#packing-and-unpacking)
+  - [collections — Container datatypes](#collections--container-datatypes)
+  - [heapq](#heapq)
+  - [itertools](#itertools)
+  - [functools](#functools)
+  - [textwrap](#textwrap)
+  - [Exceptions](#exceptions)
+  - [Objects](#objects)
+  - [Script shebang](#script-shebang)
+  - [File IO](#file-io)
+  - [Is python call by reference or call by value?](#is-python-call-by-reference-or-call-by-value)
+  - [Trivia](#trivia)
+  - [Further reading](#further-reading)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+<!-- prettier-ignore-end -->
+
 # Python Quickref
 
 - snake_case (unless dealing with legacy code)
