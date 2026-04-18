@@ -7,6 +7,16 @@ hooks = [
   { id = "check-case-conflict" },
 ]
 
+# Ruff lints and formats Python files and fenced Python code blocks in markdown.
+# ruff-format requires --preview for markdown support (experimental feature).
+[[repos]]
+repo = "https://github.com/astral-sh/ruff-pre-commit"
+rev = "v0.15.11"
+hooks = [
+  { id = "ruff-check", args = ["--fix"], types_or = ["python", "pyi", "markdown"] }, # linter
+  { id = "ruff-format", args = ["--preview"], types_or = ["python", "pyi", "markdown"] },
+]
+
 [[repos]]
 repo = "local"
 
